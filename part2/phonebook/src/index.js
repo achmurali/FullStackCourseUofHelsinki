@@ -68,7 +68,7 @@ const App = () => {
         setPersons(persons.concat(returnedPerson))
       })
       .catch(error => {
-        createBanner({ message:`${newName} could not been added to the phone book`,error:true,show:true})
+        createBanner({ message:error.response.data.error,error:true,show:true})
       })
     }
     setNewName('')
