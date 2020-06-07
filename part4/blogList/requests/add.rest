@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blog
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFyc2VuYWwiLCJpZCI6IjVlZGQxNTY4NDg2Zjg4M2ZlN2Q3MDY0ZCIsImlhdCI6MTU5MTU0ODY5MH0.Wi97YZQlJ7IpDDiZK1s2GOB6xfzE7P_eSM9R6QVWsA8
+
+{
+    "title":"Arsenal is the best",
+    "author":"Arsene Wenger 1",
+    "url":"the wenger ball 1",
+    "likes":1012
+}
