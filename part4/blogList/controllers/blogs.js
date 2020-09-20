@@ -23,7 +23,6 @@ blogsRouter.post('/', async (request, response) => {
       return response.status(401).json({ error: 'token missing or invalid' })
     }
     const user = await User.findById(decodedToken.id)
-
     const blog = new Blog({...request.body,user:user._id})
     if(!blog.title && !blog.url)
       response.status(400).end()
@@ -76,6 +75,19 @@ blogsRouter.post('/', async (request, response) => {
       response.status(204).end()
     }
     catch(exception) {
+      next(exception)
+    }
+  })
+
+  blogsRouter.post('/:id/comments',async (request,response,next) => {
+    try{
+      const blog = await Blog.findById(request.params.id)
+      console.log(blog)
+      blog.comments = blog.comments.concat(request.body.comments)
+      const blogSaved = await blog.save()
+      response.json(blogSaved.toJSON())
+    }
+    catch(exception){
       next(exception)
     }
   })

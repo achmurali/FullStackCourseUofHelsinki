@@ -1,6 +1,6 @@
-PUT http://localhost:3003/api/blog/5ecfbd5a30cafada1bae5a72
+POST http://localhost:3003/api/blog/5f67391c86c2dba276d8c3f7/comments
 Content-Type: application/json
 
 {
-    "likes":100
+    "comments":"its the best"
 }
